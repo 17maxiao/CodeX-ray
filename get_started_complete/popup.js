@@ -19,10 +19,10 @@ changeColor.onclick = function(element) {
       
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";' + 
+        {code:  
         `let words = document.body.innerHTML; 
           let highlightedWords = words.replace(/hackathon|love/gi, function(x) { 
-        return '<mark style=${"background-color:skyblue"}>' + x + '</mark>'}); 
+        return '<span class=${"popup"}>' + '<mark style=${"background-color:" + color}>' + x + '</mark>' + '</span>'}); 
         document.body.innerHTML = highlightedWords;`
   });
 })
