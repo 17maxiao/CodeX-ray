@@ -23,7 +23,7 @@ constructOptions(kButtonColors);
 
 
 let text = document.getElementById('textStatement');
-let allText = document.body().text(); 
+
 console.log(text);
 
 function mouseMove() {
@@ -37,6 +37,19 @@ function mouseMove() {
 text.addEventListener('mouseout', function() {
   text.style.color = 'black';
 })  
-}
+};
 
+function onLoad() {
+  let words = text.innerHTML;
+  let highlightedWords = applyHighlights(words);
+  document.getElementById('textStatement').innerHTML = highlightedWords; 
+};
+
+function applyHighlights(words) {
+  var res = words.replace(/hackathon|love/gi, function (x) { //global, case insensitive
+    return '<mark>' + x + '</mark>'
+  });
+  return res; 
+}
+onLoad(); 
 mouseMove();
