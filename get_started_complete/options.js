@@ -23,6 +23,8 @@ constructOptions(kButtonColors);
 
 
 let text = document.getElementById('textStatement');
+let allText = document.body().text(); 
+console.log(text);
 
 function mouseMove() {
 //  text.addEventListener('click', function() {
