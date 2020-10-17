@@ -13,14 +13,17 @@ chrome.storage.sync.get('color', function(data) {
 
 changeColor.onclick = function(element) {
   let color = element.target.value;
+
+
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      
     chrome.tabs.executeScript(
         tabs[0].id,
         {code: 'document.body.style.backgroundColor = "' + color + '";' + 
-      'let words = document.body.innerHTML;' +
-    'let highlightedWords = words.replace(/hackathon|love/gi, function(x) {' +
-      'return \'<mark>\' + x + \'<mark>\' });' +
-      'document.body.innerHTML = highlightedWords;'
+        `let words = document.body.innerHTML; 
+          let highlightedWords = words.replace(/hackathon|love/gi, function(x) { 
+        return '<mark style=${"background-color:skyblue"}>' + x + '</mark>'}); 
+        document.body.innerHTML = highlightedWords;`
   });
 })
 };
