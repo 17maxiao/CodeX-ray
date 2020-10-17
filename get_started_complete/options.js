@@ -19,3 +19,22 @@ function constructOptions(kButtonColors) {
   }
 }
 constructOptions(kButtonColors);
+
+
+
+let text = document.getElementById('textStatement');
+
+function mouseMove() {
+//  text.addEventListener('click', function() {
+//    text.style.color = 'red';
+//  })
+ text.addEventListener('mouseover', function() {
+  text.style.color = 'red';
+})  
+
+text.addEventListener('mouseout', function() {
+  text.style.color = 'black';
+})  
+}
+
+mouseMove();
