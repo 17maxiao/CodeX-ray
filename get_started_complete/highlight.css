@@ -29,7 +29,7 @@
 
 
   #boolMark {
-      background-color: black;
+      background-color: navy;
       color:white;
       font-weight: bold;
   }
@@ -39,3 +39,9 @@
       color:white;
       font-weight: bold;
   }
+
+  #intMark {
+    background-color:darkmagenta;
+    color:white;
+    font-weight: bold;
+}

@@ -15,13 +15,23 @@ return `<span class=${"tooltip"} id=${"highlight"} >
         </span>`
 });
 
-var intReplacedWords = highlightedWords.replace(/log in|sign in/gi, function(x) {
+var boolReplacedWords = highlightedWords.replace(/Log In|sign in/, function(x) {
     return `<span class=${"tooltip"} id=${"bool"} >
     <span class=${"tooltiptext"} id=${"boolpopup"}>
     This is a boolean! Booleans are either TRUE or FALSE - no in between. This
     site has detected that your "is logged in?" value is FALSE - and is asking you to log in.
     </span>
     <mark id=${"boolMark"}> ${x} </mark> 
+    </span>`
+})
+
+var intReplacedWords = boolReplacedWords.replace(/24/g, function(x) {
+    return `<span class=${"tooltip"} id=${"int"} >
+    <span class=${"tooltiptext"} id=${"intpopup"}>
+    This is an integer! Computers use integers to represent whole number numerical values
+    (not fractions or decimals). A few examples of integers are 1, 20, and -2000.
+    </span>
+    <mark id=${"intMark"}> ${x} </mark> 
     </span>`
 })
 
