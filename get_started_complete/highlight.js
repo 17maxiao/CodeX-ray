@@ -31,7 +31,7 @@ var intReplacedWords = boolReplacedWords.replace(/ 24/g, function(x) {
     This is an integer! Computers use integers to represent whole number numerical values
     (not fractions or decimals). A few examples of integers are 1, 20, and -2000.
     </span>
-    <mark id=${"intMark"}> ${x} </mark> 
+    <mark id=${"intMark"}>&nbsp;${x}</mark> 
     </span>`
 })
 
