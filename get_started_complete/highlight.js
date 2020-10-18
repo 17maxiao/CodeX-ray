@@ -25,7 +25,7 @@ var boolReplacedWords = highlightedWords.replace(/Log In|sign in/, function(x) {
     </span>`
 })
 
-var intReplacedWords = boolReplacedWords.replace(/24/g, function(x) {
+var intReplacedWords = boolReplacedWords.replace(/ 24/g, function(x) {
     return `<span class=${"tooltip"} id=${"int"} >
     <span class=${"tooltiptext"} id=${"intpopup"}>
     This is an integer! Computers use integers to represent whole number numerical values
