@@ -15,7 +15,7 @@ return `<span class=${"tooltip"} id=${"highlight"} >
         </span>`
 });
 
-var boolReplacedWords = highlightedWords.replace(/Log In|sign in/, function(x) {
+var boolReplacedWords = highlightedWords.replace(/Log In|sign in/i, function(x) {
     return `<span class=${"tooltip"} id=${"bool"} >
     <span class=${"tooltiptext"} id=${"boolpopup"}>
     This is a boolean! Booleans are either TRUE or FALSE - no in between. This
