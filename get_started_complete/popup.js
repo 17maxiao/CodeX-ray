@@ -12,18 +12,26 @@ chrome.storage.sync.get('color', function(data) {
 });
 
 changeColor.onclick = function(element) {
-  let color = element.target.value;
 
 
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      
+    
+    chrome.tabs.insertCSS(
+      tabs[0].id,
+      {
+      file: "highlight.css"
+    });
+
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code:  
-        `let words = document.body.innerHTML; 
-          let highlightedWords = words.replace(/hackathon|love/gi, function(x) { 
-        return '<span class=${"popup"}>' + '<mark style=${"background-color:" + color}>' + x + '</mark>' + '</span>'}); 
-        document.body.innerHTML = highlightedWords;`
-  });
+        {file: "highlight.js"
+    });
+
+    
 })
+
+
+
 };
+
+
