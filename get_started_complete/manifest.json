@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
+  "name": "Code X-ray",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "Look into a page to find data types!",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
