@@ -13,9 +13,10 @@ chrome.storage.sync.get('color', function(data) {
 
 changeColor.onclick = function(element) {
 
+  let color = element.target.value;
 
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    
+
     chrome.tabs.insertCSS(
       tabs[0].id,
       {
@@ -27,10 +28,16 @@ changeColor.onclick = function(element) {
         {file: "highlight.js"
     });
 
+    chrome.tabs.executeScript(
+      tabs[0].id,
+      {code: 
+        `var div=document.createElement("div");
+        document.body.appendChild(div);
+        div.innerText='test123';
+        document.body.style.backgroundColor = \"orange\"`
+  });
     
 })
-
-
 
 };
 

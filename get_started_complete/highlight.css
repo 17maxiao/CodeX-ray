@@ -28,6 +28,14 @@
   }
 
 
-  mark {
-      background-color: skyblue;
+  #boolMark {
+      background-color: black;
+      color:white;
+      font-weight: bold;
+  }
+
+  #stringMark {
+      background-color: black;
+      color:white;
+      font-weight: bold;
   }
