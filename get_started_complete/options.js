@@ -46,7 +46,13 @@ function onLoad() {
 };
 
 function applyHighlights(words) {
-  var res = words.replace(/hackathon|love/gi, function (x) { //global, case insensitive
+  var res = words.replace(/1.|2.|3.|4.|5.|6.|7.|8.|9.|0./, function (x) { //find floats
+    return '<mark>' + x + '</mark>'
+  }); 
+  res = words.replace(/1|2|3|4|5|6|7|8|9|0/, function (x) { //find ints
+    return '<mark>' + x + '</mark>'
+  }); 
+  res = words.replace(/hackathon|login|run|papa's/gi, function (x) { //global, case insensitive
     return '<mark>' + x + '</mark>'
   });
   return res; 
