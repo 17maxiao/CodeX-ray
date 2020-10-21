@@ -32,6 +32,7 @@
       background-color: navy;
       color:white;
       font-weight: bold;
+      cursor: url("images/bool.png"), auto;
   }
 
   #stringMark {
