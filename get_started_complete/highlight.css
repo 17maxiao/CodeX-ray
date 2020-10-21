@@ -14,7 +14,7 @@
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 10px 10px;
   
     /* Position the tooltip */
     position: absolute;
@@ -32,6 +32,7 @@
       background-color: navy;
       color:white;
       font-weight: bold;
+      cursor: url("images/bool.png"), auto;
   }
 
   #stringMark {
